@@ -1,0 +1,109 @@
+.container {
+  width: 100%px;
+  height: 600px;
+  margin: auto;
+  border: 1px aqua solid;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.satu {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+
+  text-align: center;
+  line-height: 80px;
+  margin-left: 5px;
+  transition: 1s;
+  
+  position: absolute;
+  
+
+}
+.dua{
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 80px;
+  margin-left: 5px;
+  transition: 1s;
+  
+  position: absolute;
+  
+}
+.tiga{
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  margin-left: 5px;
+  transition: 1s;
+  text-align: center;
+  line-height: 80px;
+    
+  position: absolute;
+}
+.empat{
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  margin-left: 5px;
+  transition: 1s;
+  text-align: center;
+  line-height: 80px;
+  
+
+
+}
+.container:hover .satu {
+  transform: rotate(18000deg);
+  margin-left: 600px;
+}.container:hover .dua {
+  transform: rotate(18000deg);
+  margin-top: 600px;
+}.container:hover .tiga {
+  transform: rotate(18000deg);
+  margin-right: 600px;
+}.container:hover .empat {
+  transform: rotate(18000deg);
+  margin-bottom: 600px;
+}
+@keyframes kotak {
+  from {
+    margin-left: 100px;
+  }
+  to {
+    margin-top: 100px;
+  }
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+.cf {
+  *zoom: 1;
+}
