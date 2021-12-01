@@ -9,11 +9,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- aos css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- my css -->
-    <link rel="stylesheet" href="style.css" />
+    <style>
+    .jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+}
+#project {
+  background-color: #e2edff;
+}
+section {
+  padding-top: 5rem;
+}
+
+    </style>
     <title>my portfolio</title>
   </head>
-  <>
+  <body id="home">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow-sm fixed-top">
       <div class="container">
@@ -41,11 +56,11 @@
     </nav>
     <!-- akhir navbar -->
     <!-- awal jumbotron -->
-    <section class="jumbotron text-center">
-      <img src="img/Screenshot_3.png" alt="rafiaditya" width="100" class="rounded-circle img-thumbnail" />
+    <section class="jumbotron text-center" >
+      <img src="img/Screenshot_3.png" id="jumbotron" alt="rafiaditya" width="100" class="rounded-circle img-thumbnail" />
 
-      <h1 class="display-4">rafiaditya</h1>
-      <p class="lead">student</p>
+      <h1 class="display-4" data-aos="fade-right" data-aos-delay="750" data-aos-duration="1500">rafiaditya</h1>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -57,20 +72,21 @@
     <!-- akhir jumbotron -->
     <!-- about -->
     <section id="about">
-      <div class="container">
+      <div class="container" >
         <div class="row text-center mb-3">
-          <div class="col">
+          <div class="col"data-aos="fade-down" data-aos-duration="3000">
             <h2>about me</h2>
           </div>
         </div>
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-center text-center" >
           <div class="col-md-4">
-            <p class="fs-5">I am a student, I go to SMP 15 Jambi City. I live in Jambi City, Jambi Province, Indonesia.
+          
+            <p class="fs-5" data-aos="fade-right" data-aos-duration="3000">I am a student, I go to SMP 15 Jambi City. I live in Jambi City, Jambi Province, Indonesia.
               i like to make a
               website</p>
           </div>
           <div class="col-md-4">
-            <p class="fs-5">I come from a poor family, but I'm still trying to achieve my goal of becoming a programmer</p>
+            <p class="fs-5" data-aos="fade-left" data-aos-duration="3000" data-aos-delay="300">I come from a poor family, but I'm still trying to achieve my goal of becoming a programmer</p>
           </div>
         </div>
       </div>
@@ -92,7 +108,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6"><div class="card">
+          <div class="col-md-6"><div class="card"data-aos="flip-left"data-aos-duration="500">
             <img src="img/1.png" class="card-img-top" alt="project1">
             <div class="card-body">
               <p class="card-text">I'm working on my first project</p>
@@ -100,7 +116,7 @@
           </div>
         </div>
         
-          <div class="col-md-6"><div class="card">
+          <div class="col-md-6"><div class="card"data-aos="flip-left"data-aos-duration="500" data-aos-delay="100" >
             <img src="img/2.png" class="card-img-top" alt="project1">
             <div class="card-body">
               <p class="card-text">me while working on my other project</p>
@@ -160,7 +176,25 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
+    
+    
+    
+     <script>
+       
+       gsap.registerPlugin(TextPlugin);
+       gsap.to('.lead',{duration: 2, delay: 1.5, text: 'student | content creator'})
+       gsap.from('#jumbotron',{duration: 1.5, rotateY:360, opacity: 0, })
+       gsap.from('.navbar',{duration: 1.5, opacity:0, ease:'bounce',y:'-100%'})
+            
+    </script>
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycby_9xgmO_K4hyHAiRdqvKS8MyUrIcZFmrO8KL_EWAjsTQE5Do6OgMVCmNknQSDTR5_W/exec'
       const form = document.forms['submit-to-google-sheet']
@@ -180,6 +214,6 @@
             console.log('Success!', response)})
           .catch(error => console.error('Error!', error.message))
       })
-    </script> 
+
   </body>
 </html>

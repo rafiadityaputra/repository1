@@ -8,3 +8,7 @@
 section {
   padding-top: 5rem;
 }
+/* Back to Top Pure CSS by igniel.com */
+html {
+  scroll-behavior: smooth;
+}
